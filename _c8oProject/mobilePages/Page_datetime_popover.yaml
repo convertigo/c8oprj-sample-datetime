@@ -1,0 +1,216 @@
+comment: |
+  <ul>
+  <li>DateTime picker displayed by clicking the input.</li>
+  <li>Datetime picker is in a Popover component.</li>
+  <li>Date value is formatted in the input field ("dd MMM yyyy").</li>
+  <li>Unformatted Date value is used to call a sequence that returns the provided date on "ionChange" event of the input item (my_date value is declared in the Page class).</li>
+  <li>DateTime "ionChange" event is used to display value in a Toast component.</li>
+  </ul>
+  <br/>
+  <img src="doc/input_popover.png" />
+preloadPriority: high
+scriptContent: 
+  - xmlizable: 
+    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+      →: |
+        /*Begin_c8o_PageImport*/
+        /*End_c8o_PageImport*/
+        /*Begin_c8o_PageDeclaration*/
+        	public my_date = null;
+        	/*End_c8o_PageDeclaration*/
+        /*Begin_c8o_PageConstructor*/
+        		/*End_c8o_PageConstructor*/
+        /*Begin_c8o_PageFunction*/
+        	/*End_c8o_PageFunction*/
+        
+segment: path-to-xfirst
+title: datetime-popover
+↓Header [ngx.components.UIDynamicElement-1491634212350]: 
+  beanData: '{"ionBean":"Header"}'
+  comment: Page header
+  tagName: ion-header
+  ↓ToolBar [ngx.components.UIDynamicElement-1491634231108]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1588171103814]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓BackButton [ngx.components.UIDynamicElement-1643993281257]: 
+        beanData: '{"ionBean":"BackButton"}'
+        tagName: ion-back-button
+      ↓MenuButton [ngx.components.UIDynamicElement-1588172846908]: 
+        beanData: '{"ionBean":"MenuButton"}'
+        tagName: ion-menu-button
+    ↓BarTitle [ngx.components.UIDynamicElement-1491634265317]: 
+      beanData: '{"ionBean":"BarTitle"}'
+      tagName: ion-title
+      ↓Text [ngx.components.UIText-1491634275121]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:Datetime
+    ↓ButtonSet2 [ngx.components.UIDynamicElement-1588170811054]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+      tagName: ion-buttons
+      ↓Button [ngx.components.UIDynamicElement-1588170817806]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Icon [ngx.components.UIDynamicElement-1588170831166]: 
+          beanData: |
+            '{
+             "ionBean": "Icon",
+             "IconName": "plain:ellipsis-vertical",
+             "IconMdName": "plain",
+             "IconIosName": "plain"
+            }'
+          tagName: ion-icon
+↓Content [ngx.components.UIDynamicElement-1489674805352]: 
+  beanData: '{"ionBean":"Content"}'
+  comment: Page content
+  tagName: ion-content
+  ↓Div [ngx.components.UIDynamicElement-1677850580784]: 
+    beanData: '{"ionBean":"DivTag"}'
+    tagName: div
+    ↓Text [ngx.components.UIText-1677850585974]: 
+      textValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:'my_date' global variable is defined in the Page class.
+  ↓Break [ngx.components.UIDynamicElement-1677850652642]: 
+    beanData: '{"ionBean":"Break"}'
+    selfClose: true
+    tagName: br
+  ↓ListItem [ngx.components.UIDynamicElement-1677838033342]: 
+    beanData: '{"ionBean":"ListItem"}'
+    tagName: ion-item
+    ↓Label [ngx.components.UIDynamicElement-1677838033344]: 
+      beanData: '{"ionBean":"Label","Position":"plain:stacked"}'
+      tagName: ion-label
+      ↓Text [ngx.components.UIText-1677838033346]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:Click to select a Date
+    ↓TextInput [ngx.components.UIDynamicElement-1677838084426]: 
+      beanData: |
+        '{
+         "ionBean": "Input",
+         "ControlName": "plain",
+         "DoubleBinding": "plain",
+         "Debounce": "plain:0",
+         "Value": "script:my_date | date: ''dd MMM yyyy''"
+        }'
+      tagName: ion-input
+      ↓Attr [ngx.components.UIAttribute-1677838166201]: 
+        attrName: id
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:my_datetime_page1
+      ↓Event [ngx.components.UIControlEvent-1677839401568]: 
+        attrName: (ionChange)
+        eventName: ionChange
+        ↓Toast [ngx.components.UIDynamicAction-1677840591378]: 
+          beanData: |
+            '{
+             "ionBean": "ToastAction",
+             "message": "script:out.detail.value",
+             "position": "plain:top"
+            }'
+        ↓CallSequence [ngx.components.UIDynamicAction-1677843636530]: 
+          beanData: |
+            '{
+             "ionBean": "CallSequenceAction",
+             "requestable": "plain:datetime.data_by_date",
+             "marker": "plain:page1"
+            }'
+          ↓date [ngx.components.UIControlVariable-1677843639633]: 
+            comment: new variable
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.my_date
+      ↓Attr1 [ngx.components.UIAttribute-1677840494525]: 
+        attrName: class
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:ion-text-end
+  ↓Popover [ngx.components.UIDynamicElement-1677837536612]: 
+    beanData: '{"ionBean":"InlinePopover","Trigger":"plain:my_datetime_page1"}'
+    tagName: ion-popover
+    ↓DateTime [ngx.components.UIDynamicElement-1677837551534]: 
+      beanData: |
+        '{
+         "ionBean": "DateTime",
+         "ControlName": "plain",
+         "DoubleBinding": "script:my_date",
+         "Presentation": "plain:date"
+        }'
+      tagName: ion-datetime
+      ↓Event [ngx.components.UIControlEvent-1677841229759]: 
+        attrName: (ionChange)
+        eventName: ionChange
+        ↓Toast [ngx.components.UIDynamicAction-1677841413830]: 
+          beanData: '{"ionBean":"ToastAction","message":"script:this.my_date"}'
+    ↓Button [ngx.components.UIDynamicElement-1677837536618]: 
+      beanData: '{"ionBean":"Button"}'
+      tagName: ion-button
+      ↓Label [ngx.components.UIDynamicElement-1677837536620]: 
+        beanData: '{"ionBean":"Label"}'
+        tagName: ion-label
+        ↓Text [ngx.components.UIText-1677837536622]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:close popover
+      ↓Event [ngx.components.UIControlEvent-1677837536624]: 
+        ↓ClosePopover [ngx.components.UIDynamicAction-1677837536626]: 
+          beanData: '{"ionBean":"ClosePopoverAction"}'
+  ↓Directive [ngx.components.UIControlDirective-1677843550362]: 
+    directiveName: If
+    directiveSource: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Sequence","project":"datetime","input":"","model":{"data":[{"sequence":"datetime.data_by_date","marker":"page1"}],"path":"?.data","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓ListItem [ngx.components.UIDynamicElement-1677843550365]: 
+      beanData: '{"ionBean":"ListItem"}'
+      tagName: ion-item
+      ↓Label [ngx.components.UIDynamicElement-1677843550368]: 
+        beanData: '{"ionBean":"Label"}'
+        tagName: ion-label
+        ↓Text [ngx.components.UIText-1677843550371]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: source:{"filter":"Sequence","project":"datetime","input":"","model":{"data":[{"sequence":"datetime.data_by_date","marker":"page1"}],"path":"?.data","prefix":"","suffix":"","custom":"","useCustom":false}}
+↓Footer [ngx.components.UIDynamicElement-1491634242460]: 
+  beanData: '{"ionBean":"Footer"}'
+  comment: Page footer
+  tagName: ion-footer
+  ↓ToolBar [ngx.components.UIDynamicElement-1491634317538]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet [ngx.components.UIDynamicElement-1588170246138]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓Button1 [ngx.components.UIDynamicElement-1491634332730]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Text [ngx.components.UIText-1491634340354]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 1
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1588170269871]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+      tagName: ion-buttons
+      ↓Button2 [ngx.components.UIDynamicElement-1491634376874]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Text [ngx.components.UIText-1491634383107]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 2

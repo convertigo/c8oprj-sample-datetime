@@ -1,0 +1,180 @@
+↑isRoot: true
+comment: |
+  <ul>
+  <li>Use of custom tag ion-datetime-button.</li>
+  <li>Datetime picker is in a Modal component.</li>
+  <li>Date value bound to a global variable component ("my_picked_date").</li>
+  <li>Date value is used to call a sequence that returns the provided date when the close modal button is clicked.</li>
+  </ul>
+  <br/>
+  <img src="doc/ion_datetime_button_modal.png" />
+preloadPriority: high
+scriptContent: 
+  - xmlizable: 
+    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+      →: |
+        /*Begin_c8o_PageImport*/
+        /*End_c8o_PageImport*/
+        /*Begin_c8o_PageDeclaration*/
+        	/*End_c8o_PageDeclaration*/
+        /*Begin_c8o_PageConstructor*/
+        		/*End_c8o_PageConstructor*/
+        /*Begin_c8o_PageFunction*/
+        	/*End_c8o_PageFunction*/
+        
+segment: path-to-page_datetime_button
+title: ion-datetime-button
+↓Header [ngx.components.UIDynamicElement-1677841794636]: 
+  beanData: '{"ionBean":"Header"}'
+  comment: Page header
+  tagName: ion-header
+  ↓ToolBar [ngx.components.UIDynamicElement-1677841794639]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1677841794642]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓BackButton [ngx.components.UIDynamicElement-1677841794645]: 
+        beanData: '{"ionBean":"BackButton"}'
+        tagName: ion-back-button
+      ↓MenuButton [ngx.components.UIDynamicElement-1677841794648]: 
+        beanData: '{"ionBean":"MenuButton"}'
+        tagName: ion-menu-button
+    ↓BarTitle [ngx.components.UIDynamicElement-1677841794651]: 
+      beanData: '{"ionBean":"BarTitle"}'
+      tagName: ion-title
+      ↓Text [ngx.components.UIText-1677841794654]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:Datetime
+    ↓ButtonSet2 [ngx.components.UIDynamicElement-1677841794657]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+      tagName: ion-buttons
+      ↓Button [ngx.components.UIDynamicElement-1677841794660]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Icon [ngx.components.UIDynamicElement-1677841794663]: 
+          beanData: |
+            '{
+             "ionBean": "Icon",
+             "IconName": "plain:ellipsis-vertical",
+             "IconMdName": "plain",
+             "IconIosName": "plain"
+            }'
+          tagName: ion-icon
+↓Content [ngx.components.UIDynamicElement-1677841794666]: 
+  beanData: '{"ionBean":"Content"}'
+  comment: Page content
+  tagName: ion-content
+  ↓Tag [ngx.components.UIElement-1677841851152]: 
+    tagName: ion-datetime-button
+    ↓Attr [ngx.components.UIAttribute-1677841903355]: 
+      attrName: datetime
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:my_datetime
+  ↓Modal [ngx.components.UIDynamicElement-1677842330325]: 
+    beanData: '{"ionBean":"InlineModal"}'
+    tagName: ion-modal
+    ↓DateTime [ngx.components.UIDynamicElement-1677842500532]: 
+      beanData: |
+        '{
+         "ionBean": "DateTime",
+         "ControlName": "plain:name1677842500532",
+         "DoubleBinding": "source:{\"filter\":\"Global\",\"project\":\"datetime\",\"input\":\"\",\"model\":{\"data\":[{\"sharedObject\":\"router.sharedObject\"}],\"path\":\"?.my_picked_date\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+        }'
+      tagName: ion-datetime
+      ↓Attr [ngx.components.UIAttribute-1677842523671]: 
+        attrName: id
+        attrValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:my_datetime
+    ↓Button [ngx.components.UIDynamicElement-1677842330331]: 
+      beanData: '{"ionBean":"Button"}'
+      tagName: ion-button
+      ↓Label [ngx.components.UIDynamicElement-1677842330333]: 
+        beanData: '{"ionBean":"Label"}'
+        tagName: ion-label
+        ↓Text [ngx.components.UIText-1677842330335]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:close modal
+      ↓Event [ngx.components.UIControlEvent-1677842330337]: 
+        ↓Toast [ngx.components.UIDynamicAction-1677842763597]: 
+          beanData: '{"ionBean":"ToastAction","message":"source:{\"filter\":\"Global\",\"project\":\"datetime\",\"input\":\"\",\"model\":{\"data\":[{\"sharedObject\":\"router.sharedObject\"}],\"path\":\"?.my_picked_date\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+        ↓CloseModal [ngx.components.UIDynamicAction-1677842330339]: 
+          beanData: '{"ionBean":"CloseModalAction"}'
+        ↓CallSequence [ngx.components.UIDynamicAction-1677843247963]: 
+          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:datetime.data_by_date"}'
+          ↓date [ngx.components.UIControlVariable-1677843272390]: 
+            comment: new variable
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: source:{"filter":"Global","project":"datetime","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.my_picked_date","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓Attr [ngx.components.UIAttribute-1677842420873]: 
+      attrName: '[keepContentsMounted]'
+      attrValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:true
+  ↓Directive [ngx.components.UIControlDirective-1677843498286]: 
+    directiveName: If
+    directiveSource: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Sequence","project":"datetime","input":"","model":{"data":[{"sequence":"datetime.data_by_date","marker":""}],"path":"?.data","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓ListItem [ngx.components.UIDynamicElement-1677843462285]: 
+      beanData: '{"ionBean":"ListItem"}'
+      tagName: ion-item
+      ↓Label [ngx.components.UIDynamicElement-1677843462287]: 
+        beanData: '{"ionBean":"Label"}'
+        tagName: ion-label
+        ↓Text [ngx.components.UIText-1677843462289]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: source:{"filter":"Sequence","project":"datetime","input":"","model":{"data":[{"sequence":"datetime.data_by_date","marker":""}],"path":"?.data","prefix":"","suffix":"","custom":"","useCustom":false}}
+↓Footer [ngx.components.UIDynamicElement-1677841794720]: 
+  beanData: '{"ionBean":"Footer"}'
+  comment: Page footer
+  tagName: ion-footer
+  ↓ToolBar [ngx.components.UIDynamicElement-1677841794723]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet [ngx.components.UIDynamicElement-1677841794726]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓Button1 [ngx.components.UIDynamicElement-1677841794729]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Text [ngx.components.UIText-1677841794732]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 1
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1677841794735]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+      tagName: ion-buttons
+      ↓Button2 [ngx.components.UIDynamicElement-1677841794738]: 
+        beanData: '{"ionBean":"Button"}'
+        tagName: ion-button
+        ↓Text [ngx.components.UIText-1677841794741]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:Action 2
+↓PageEvent [ngx.components.UIPageEvent-1677849318107]: 
+  ↓SetGlobal [ngx.components.UIDynamicAction-1677849326890]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:my_picked_date",
+       "Value": "script:null"
+      }'
+    comment: Global declaration

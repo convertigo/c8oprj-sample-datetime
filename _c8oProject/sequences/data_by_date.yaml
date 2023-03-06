@@ -1,0 +1,16 @@
+comment: Returns the 'date' variable
+↓Field [steps.JsonFieldStep-1677843096404]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: data
+  value: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: JS
+        - →→: '''Call_Sequence returned date: '' + date'
+↓date [variables.RequestableVariable-1677843041468]: 
+  value: 

@@ -1,13 +1,15 @@
 ↑convertigo: 8.1.0.m006
 ↓datetime [core.Project]: 
-  comment: Convertigo NGX builder Project
+  comment: How to use DateTime
   corsOrigin: =Origin
+  version: 1.0
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
+  ↓data_by_date [sequences.GenericSequence]: 🗏 sequences/data_by_date.yaml
   ↓Project_reference [references.ProjectSchemaReference]: 
     comment: ngx builder template
     projectName: mobilebuilder_tpl_8_1_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl/archive/mobilebuilder_tpl_8_1_0_ngx.zip
   ↓Application [core.MobileApplication]: 
-    comment: Describes the mobile application global properties
+    comment: NGX DateTime component usage.
     splashRemoveMode: beforeUpdate
     ↓Android [mobileplatforms.Android]: 
       comment: Android platform
