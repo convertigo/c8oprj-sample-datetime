@@ -87,6 +87,7 @@ NGX DateTime component usage.
 <li>DateTime "ionChange" event is used to display value in a Toast component.</li>
 </ul>
 <br/>
+
 <img src="doc/input_popover.png" />
 </p></blockquote></details>
 </p></blockquote></details>

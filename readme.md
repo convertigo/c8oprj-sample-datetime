@@ -24,13 +24,13 @@ For more technical informations : [documentation](./project.md)
      <tr><td>To contribute</td><td>
 
      ```
-     datetime=C:/Convertigo/Studio 8.1.0/workspace/datetime/.git:branch=master
+     datetime=https://github.com/convertigo/c8oprj-sample-datetime.git:branch=master
      ```
      </td></tr>
      <tr><td>To simply use</td><td>
 
      ```
-     datetime=C:/Convertigo/Studio 8.1.0/workspace/datetime//archive/master.zip
+     datetime=https://github.com/convertigo/c8oprj-sample-datetime/archive/master.zip
      ```
      </td></tr>
     </table>
@@ -64,6 +64,7 @@ NGX DateTime component usage.
 <li>DateTime "ionChange" event is used to display value in a Toast component.</li>
 </ul>
 <br/>
+
 <img src="doc/input_popover.png" />
 
 
